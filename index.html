@@ -79,9 +79,7 @@ var params = new URLSearchParams(window.location.search);
 var tahun = params.get('tahun') || '1';
 var subjekId = params.get('id') || 'matematik';
 
-// ==========================================
-// NAMA SUBJEK
-// ==========================================
+// ===== NAMA SUBJEK =====
 var NAMA_SUBJEK = {
   matematik: { nama: 'Matematik', emoji: '🔢', info: 'Nombor & Kiraan' },
   bm: { nama: 'Bahasa Melayu', emoji: '🇲🇾', info: 'Baca & Tulis' },
@@ -95,9 +93,7 @@ var NAMA_SUBJEK = {
   rbt: { nama: 'RBT', emoji: '🛠️', info: 'Reka Bentuk' }
 };
 
-// ==========================================
-// TOPIK IKUT SUBJEK & TAHUN
-// ==========================================
+// ===== TOPIK IKUT SUBJEK & TAHUN =====
 var TOPIK = {
   matematik: {
     '1': ['Tambah', 'Tolak', 'Wang', 'Waktu'],
@@ -175,56 +171,65 @@ var TOPIK = {
   }
 };
 
-// ==========================================
-// NOTA BUKU TEKS - SEMUA TAHUN
-// ==========================================
+// ===== NOTA =====
 var NOTA = {};
 
-// ===== MATEMATIK =====
-NOTA['matematik_1_Tambah'] = '<h2>➕ TAMBAH</h2><p>Tambah bermaksud <b>campur</b> dua atau lebih nombor.</p><h3>📝 Cara Kira</h3><div class="langkah"><b>Langkah 1:</b> Tulis nombor menegak</div><div class="langkah"><b>Langkah 2:</b> Susun sa di bawah sa</div><div class="langkah"><b>Langkah 3:</b> Tambah dari kanan</div><h3>✨ Contoh</h3><div class="contoh">5 + 3 = 8<br>12 + 7 = 19<br>25 + 13 = 38</div><h3>💡 Tip</h3><div class="formula">+ maksud TAMBAH</div>';
-NOTA['matematik_1_Tolak'] = '<h2>➖ TOLAK</h2><p>Tolak bermaksud <b>kurang</b> atau <b>ambil</b>.</p><h3>📝 Cara Kira</h3><div class="langkah"><b>Langkah 1:</b> Nombor besar di atas</div><div class="langkah"><b>Langkah 2:</b> Nombor kecil di bawah</div><div class="langkah"><b>Langkah 3:</b> Tolak dari kanan</div><h3>✨ Contoh</h3><div class="contoh">8 - 3 = 5<br>15 - 4 = 11<br>30 - 12 = 18</div><h3>💡 Tip</h3><div class="formula">- maksud TOLAK</div>';
-NOTA['matematik_1_Wang'] = '<h2>💰 WANG</h2><p>Wang Malaysia guna <b>Ringgit (RM)</b> dan <b>sen</b>.</p><h3>📝 Unit Wang</h3><div class="langkah">RM1 = 100 sen</div><div class="langkah">50 sen = RM0.50</div><h3>✨ Contoh</h3><div class="contoh">RM2 + RM3 = RM5<br>RM10 - RM4 = RM6</div>';
+// MATEMATIK
+NOTA['matematik_1_Tambah'] = '<h2>➕ TAMBAH</h2><p>Tambah bermaksud <b>campur</b> dua nombor.</p><h3>📝 Cara Kira</h3><div class="langkah"><b>1.</b> Tulis menegak</div><div class="langkah"><b>2.</b> Sa di bawah sa</div><div class="langkah"><b>3.</b> Tambah dari kanan</div><h3>✨ Contoh</h3><div class="contoh">5 + 3 = 8<br>12 + 7 = 19<br>25 + 13 = 38</div><h3>💡 Tip</h3><div class="formula">+ = TAMBAH<br>Nombor jadi LEBIH BESAR</div>';
+NOTA['matematik_1_Tolak'] = '<h2>➖ TOLAK</h2><p>Tolak = kurang atau ambil.</p><h3>📝 Cara Kira</h3><div class="langkah"><b>1.</b> Nombor besar di atas</div><div class="langkah"><b>2.</b> Nombor kecil di bawah</div><div class="langkah"><b>3.</b> Tolak dari kanan</div><h3>✨ Contoh</h3><div class="contoh">8 - 3 = 5<br>15 - 4 = 11<br>30 - 12 = 18</div><h3>💡 Tip</h3><div class="formula">- = TOLAK<br>Nombor jadi LEBIH KECIL</div>';
+NOTA['matematik_1_Wang'] = '<h2>💰 WANG</h2><p>Wang Malaysia = Ringgit (RM) & sen.</p><h3>📝 Unit</h3><div class="langkah">RM1 = 100 sen</div><div class="langkah">50 sen = RM0.50</div><h3>✨ Contoh</h3><div class="contoh">RM2 + RM3 = RM5<br>RM10 - RM4 = RM6<br>50 sen + 50 sen = RM1</div>';
 NOTA['matematik_1_Waktu'] = '<h2>⏰ WAKTU</h2><h3>📝 Unit Masa</h3><div class="langkah">1 jam = 60 minit</div><div class="langkah">1 minit = 60 saat</div><div class="langkah">1 hari = 24 jam</div><h3>✨ Contoh</h3><div class="contoh">2 jam = 120 minit<br>Setengah jam = 30 minit</div>';
 
-NOTA['matematik_2_Tambah'] = '<h2>➕ TAMBAH (TAHUN 2)</h2><p>Tambah nombor hingga 1,000.</p><h3>📝 Cara Kira</h3><div class="langkah">Susun menegak ikut tempat</div><div class="langkah">Tambah dari kanan: sa, puluh, ratus</div><h3>✨ Contoh</h3><div class="contoh">125 + 234 = 359<br>340 + 150 = 490</div>';
-NOTA['matematik_2_Tolak'] = '<h2>➖ TOLAK (TAHUN 2)</h2><p>Tolak nombor hingga 1,000.</p><h3>📝 Cara Kira</h3><div class="langkah">Tolak dari kanan: sa, puluh, ratus</div><div class="langkah">Kalau tak cukup, pinjam dari tempat sebelah</div><h3>✨ Contoh</h3><div class="contoh">500 - 125 = 375<br>720 - 340 = 380</div>';
-NOTA['matematik_2_Darab'] = '<h2>✖️ DARAB (TAHUN 2)</h2><p>Darab = tambah berulang.</p><h3>📝 Cara Kira</h3><div class="langkah">3 × 4 = 3+3+3+3 = 12</div><div class="langkah">Hafal sifir 2-5</div><h3>✨ Contoh</h3><div class="contoh">2 × 5 = 10<br>3 × 4 = 12<br>4 × 5 = 20</div>';
-NOTA['matematik_2_Wang'] = '<h2>💰 WANG (TAHUN 2)</h2><p>Campur & tolak wang hingga RM100.</p><h3>✨ Contoh</h3><div class="contoh">RM15 + RM20 = RM35<br>RM50 - RM25 = RM25</div>';
+NOTA['matematik_2_Tambah'] = '<h2>➕ TAMBAH (Thn 2)</h2><p>Nombor hingga 1,000.</p><h3>✨ Contoh</h3><div class="contoh">125 + 234 = 359<br>340 + 150 = 490<br>500 + 250 = 750</div>';
+NOTA['matematik_2_Tolak'] = '<h2>➖ TOLAK (Thn 2)</h2><p>Nombor hingga 1,000.</p><h3>✨ Contoh</h3><div class="contoh">500 - 125 = 375<br>720 - 340 = 380</div>';
+NOTA['matematik_2_Darab'] = '<h2>✖️ DARAB (Thn 2)</h2><p>Darab = tambah berulang.</p><h3>✨ Contoh</h3><div class="contoh">2 × 5 = 10<br>3 × 4 = 12<br>4 × 5 = 20</div><h3>💡 Tip</h3><div class="formula">Hafal sifir 2-5</div>';
+NOTA['matematik_2_Wang'] = '<h2>💰 WANG (Thn 2)</h2><p>Campur & tolak wang hingga RM100.</p><h3>✨ Contoh</h3><div class="contoh">RM15 + RM20 = RM35<br>RM50 - RM25 = RM25</div>';
 
-NOTA['matematik_3_Tambah'] = '<h2>➕ TAMBAH (TAHUN 3)</h2><p>Tambah nombor hingga 10,000.</p><h3>✨ Contoh</h3><div class="contoh">2,345 + 1,234 = 3,579<br>5,000 + 2,500 = 7,500</div>';
-NOTA['matematik_3_Tolak'] = '<h2>➖ TOLAK (TAHUN 3)</h2><p>Tolak nombor hingga 10,000.</p><h3>✨ Contoh</h3><div class="contoh">5,000 - 1,234 = 3,766<br>8,000 - 2,500 = 5,500</div>';
-NOTA['matematik_3_Darab'] = '<h2>✖️ DARAB (TAHUN 3)</h2><p>Darab nombor besar.</p><h3>📝 Cara Kira</h3><div class="langkah">Hafal sifir 2-9</div><div class="langkah">Susun menegak untuk nombor besar</div><h3>✨ Contoh</h3><div class="contoh">23 × 3 = 69<br>45 × 4 = 180</div>';
-NOTA['matematik_3_Bahagi'] = '<h2>➗ BAHAGI (TAHUN 3)</h2><p>Bahagi = kongsi sama banyak.</p><h3>📝 Cara Kira</h3><div class="langkah">Tanya "berapa kali masuk?"</div><div class="langkah">Darab balik untuk check</div><h3>✨ Contoh</h3><div class="contoh">12 ÷ 3 = 4<br>24 ÷ 4 = 6<br>30 ÷ 5 = 6</div>';
-NOTA['matematik_3_Pecahan'] = '<h2>🍕 PECAHAN (TAHUN 3)</h2><p>Pecahan = sebahagian daripada benda.</p><h3>📝 Bahagian</h3><div class="langkah"><b>Pengangka</b> (atas) = bilangan diambil</div><div class="langkah"><b>Penyebut</b> (bawah) = jumlah keseluruhan</div><h3>✨ Contoh</h3><div class="contoh">1/2 = separuh<br>1/4 = satu per empat<br>3/4 = tiga per empat</div>';
+NOTA['matematik_3_Tambah'] = '<h2>➕ TAMBAH (Thn 3)</h2><p>Nombor hingga 10,000.</p><h3>✨ Contoh</h3><div class="contoh">2,345 + 1,234 = 3,579<br>5,000 + 2,500 = 7,500</div>';
+NOTA['matematik_3_Tolak'] = '<h2>➖ TOLAK (Thn 3)</h2><p>Nombor hingga 10,000.</p><h3>✨ Contoh</h3><div class="contoh">5,000 - 1,234 = 3,766<br>8,000 - 2,500 = 5,500</div>';
+NOTA['matematik_3_Darab'] = '<h2>✖️ DARAB (Thn 3)</h2><h3>✨ Contoh</h3><div class="contoh">23 × 3 = 69<br>45 × 4 = 180</div><h3>💡 Tip</h3><div class="formula">Hafal sifir 2-9</div>';
+NOTA['matematik_3_Bahagi'] = '<h2>➗ BAHAGI (Thn 3)</h2><p>Bahagi = kongsi sama banyak.</p><h3>✨ Contoh</h3><div class="contoh">12 ÷ 3 = 4<br>24 ÷ 4 = 6<br>30 ÷ 5 = 6</div>';
+NOTA['matematik_3_Pecahan'] = '<h2>🍕 PECAHAN (Thn 3)</h2><h3>📝 Bahagian</h3><div class="langkah"><b>Pengangka</b> (atas)</div><div class="langkah"><b>Penyebut</b> (bawah)</div><h3>✨ Contoh</h3><div class="contoh">1/2 = separuh<br>1/4 = satu per empat<br>3/4 = tiga per empat</div>';
 
-NOTA['matematik_4_Pecahan'] = '<h2>🍕 PECAHAN (TAHUN 4)</h2><p>Pecahan wajar, tak wajar & nombor bercampur.</p><h3>📝 Jenis</h3><div class="langkah"><b>Wajar:</b> 3/4 (atas < bawah)</div><div class="langkah"><b>Tak wajar:</b> 5/4 (atas > bawah)</div><div class="langkah"><b>Bercampur:</b> 1 1/4</div><h3>✨ Contoh</h3><div class="contoh">5/4 = 1 1/4<br>7/3 = 2 1/3</div>';
-NOTA['matematik_4_Perpuluhan'] = '<h2>🔟 PERPULUHAN (TAHUN 4)</h2><p>Perpuluhan guna titik (.).</p><h3>📝 Cara Baca</h3><div class="langkah">0.5 = sifar perpuluhan lima</div><div class="langkah">1.25 = satu perpuluhan dua lima</div><h3>✨ Contoh</h3><div class="contoh">0.5 + 0.3 = 0.8<br>1.2 + 0.8 = 2.0</div>';
-NOTA['matematik_4_Peratus'] = '<h2>% PERATUS (TAHUN 4)</h2><p>Peratus = per 100.</p><h3>📝 Simbol</h3><div class="langkah">50% = 50/100 = 0.5</div><div class="langkah">100% = semua</div><div class="langkah">25% = 1/4</div><h3>✨ Contoh</h3><div class="contoh">50% daripada 100 = 50<br>25% daripada 80 = 20</div>';
+NOTA['matematik_4_Pecahan'] = '<h2>🍕 PECAHAN (Thn 4)</h2><h3>📝 Jenis</h3><div class="langkah"><b>Wajar:</b> 3/4</div><div class="langkah"><b>Tak wajar:</b> 5/4</div><div class="langkah"><b>Bercampur:</b> 1 1/4</div><h3>✨ Contoh</h3><div class="contoh">5/4 = 1 1/4<br>7/3 = 2 1/3</div>';
+NOTA['matematik_4_Perpuluhan'] = '<h2>🔟 PERPULUHAN (Thn 4)</h2><h3>✨ Contoh</h3><div class="contoh">0.5 + 0.3 = 0.8<br>1.2 + 0.8 = 2.0<br>2.5 - 0.5 = 2.0</div>';
+NOTA['matematik_4_Peratus'] = '<h2>% PERATUS (Thn 4)</h2><p>Peratus = per 100.</p><h3>✨ Contoh</h3><div class="contoh">50% daripada 100 = 50<br>25% daripada 80 = 20<br>10% daripada 50 = 5</div>';
 
-NOTA['matematik_5_Pecahan'] = '<h2>🍕 PECAHAN (TAHUN 5)</h2><p>Tambah & tolak pecahan.</p><h3>📝 Cara Kira</h3><div class="langkah">Sama penyebut: tambah pengangka sahaja</div><div class="langkah">Beda penyebut: samakan dulu</div><h3>✨ Contoh</h3><div class="contoh">1/4 + 2/4 = 3/4<br>1/2 + 1/4 = 2/4 + 1/4 = 3/4</div>';
-NOTA['matematik_5_Perpuluhan'] = '<h2>🔟 PERPULUHAN (TAHUN 5)</h2><p>Darab & bahagi perpuluhan.</p><h3>✨ Contoh</h3><div class="contoh">0.5 × 2 = 1.0<br>1.5 ÷ 3 = 0.5</div>';
-NOTA['matematik_5_Peratus'] = '<h2>% PERATUS (TAHUN 5)</h2><p>Kira peratus dengan mudah.</p><h3>✨ Contoh</h3><div class="contoh">10% daripada 50 = 5<br>20% daripada 100 = 20<br>50% daripada 60 = 30</div>';
+NOTA['matematik_5_Pecahan'] = '<h2>🍕 PECAHAN (Thn 5)</h2><h3>✨ Contoh</h3><div class="contoh">1/4 + 2/4 = 3/4<br>1/2 + 1/4 = 3/4</div>';
+NOTA['matematik_5_Perpuluhan'] = '<h2>🔟 PERPULUHAN (Thn 5)</h2><h3>✨ Contoh</h3><div class="contoh">0.5 × 2 = 1.0<br>1.5 ÷ 3 = 0.5</div>';
+NOTA['matematik_5_Peratus'] = '<h2>% PERATUS (Thn 5)</h2><h3>✨ Contoh</h3><div class="contoh">10% daripada 50 = 5<br>20% daripada 100 = 20<br>50% daripada 60 = 30</div>';
 
-NOTA['matematik_6_Pecahan'] = '<h2>🍕 PECAHAN (TAHUN 6)</h2><p>Operasi pecahan campur.</p><h3>✨ Contoh</h3><div class="contoh">1/2 + 1/3 = 3/6 + 2/6 = 5/6<br>2/3 - 1/4 = 8/12 - 3/12 = 5/12</div>';
-NOTA['matematik_6_Perpuluhan'] = '<h2>🔟 PERPULUHAN (TAHUN 6)</h2><p>Operasi perpuluhan campur.</p><h3>✨ Contoh</h3><div class="contoh">1.5 + 2.3 = 3.8<br>5.0 - 1.5 = 3.5<br>0.5 × 4 = 2.0</div>';
-NOTA['matematik_6_Peratus'] = '<h2>% PERATUS (TAHUN 6)</h2><p>Peratus dalam kehidupan harian.</p><h3>✨ Contoh</h3><div class="contoh">15% daripada 200 = 30<br>25% daripada 80 = 20<br>Diskaun 10% dari RM50 = RM5</div>';
+NOTA['matematik_6_Pecahan'] = '<h2>🍕 PECAHAN (Thn 6)</h2><h3>✨ Contoh</h3><div class="contoh">1/2 + 1/3 = 5/6<br>2/3 - 1/4 = 5/12</div>';
+NOTA['matematik_6_Perpuluhan'] = '<h2>🔟 PERPULUHAN (Thn 6)</h2><h3>✨ Contoh</h3><div class="contoh">1.5 + 2.3 = 3.8<br>5.0 - 1.5 = 3.5</div>';
+NOTA['matematik_6_Peratus'] = '<h2>% PERATUS (Thn 6)</h2><h3>✨ Contoh</h3><div class="contoh">15% daripada 200 = 30<br>25% daripada 80 = 20<br>Diskaun 10% dari RM50 = RM5</div>';
 
-// ===== BAHASA MELAYU =====
-NOTA['bm_1_Sukukata'] = '<h2>🔤 SUKUKATA</h2><p>Sukukata = bunyi yang membentuk perkataan.</p><h3>📝 Jenis</h3><div class="langkah"><b>KV</b> = ma, pa, tu</div><div class="langkah"><b>VK</b> = am, an, ap</div><div class="langkah"><b>KVK</b> = mak, pak, kak</div><div class="langkah"><b>KVKV</b> = ma-ma, bu-ku</div><h3>✨ Contoh</h3><div class="contoh">Bola = bo-la<br>Buku = bu-ku<br>Ikan = i-kan</div>';
+// BAHASA MELAYU
+NOTA['bm_1_Sukukata'] = '<h2>🔤 SUKUKATA</h2><h3>📝 Jenis</h3><div class="langkah"><b>KV</b> = ma, pa, tu</div><div class="langkah"><b>VK</b> = am, an, ap</div><div class="langkah"><b>KVK</b> = mak, pak</div><div class="langkah"><b>KVKV</b> = ma-ma, bu-ku</div><h3>✨ Contoh</h3><div class="contoh">Bola = bo-la<br>Buku = bu-ku<br>Ikan = i-kan</div>';
 NOTA['bm_1_Vokal dan Konsonan'] = '<h2>🔠 VOKAL & KONSONAN</h2><h3>📝 Vokal (A E I O U)</h3><div class="contoh">A - Ayah<br>E - Emak<br>I - Ikan<br>O - Oren<br>U - Ubi</div><h3>📝 Konsonan</h3><p>Selain A E I O U — b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z</p>';
-NOTA['bm_2_Ayat Mudah'] = '<h2>📝 AYAT MUDAH</h2><p>Ayat mudah = ayat pendek & senang.</p><h3>✨ Contoh</h3><div class="contoh">Saya makan nasi.<br>Ayah pergi kerja.<br>Emak masak ikan.</div><h3>💡 Tip</h3><div class="formula">Subjek + Kata Kerja + Objek</div>';
-NOTA['bm_2_Kata Nama'] = '<h2>📚 KATA NAMA</h2><p>Kata nama = nama orang, tempat, benda.</p><h3>✨ Contoh</h3><div class="contoh">Orang: Ali, Siti, Ahmad<br>Tempat: sekolah, rumah<br>Benda: meja, buku, bola</div>';
-NOTA['bm_3_Karangan'] = '<h2>✍️ KARANGAN (TAHUN 3)</h2><p>Karangan = tulisan panjang.</p><h3>📝 Struktur</h3><div class="langkah"><b>1.</b> Pendahuluan</div><div class="langkah"><b>2.</b> Isi (3-4 perenggan)</div><div class="langkah"><b>3.</b> Penutup</div>';
-NOTA['bm_3_Peribahasa'] = '<h2>📖 PERIBAHASA</h2><p>Peribahasa = ayat pendek berisi nasihat.</p><h3>✨ Contoh</h3><div class="contoh">Bagai aur dengan tebing<br>Sedikit-sedikit, lama-lama jadi bukit<br>Rajin berusaha, pasti berjaya</div>';
-NOTA['bm_4_Karangan'] = '<h2>✍️ KARANGAN (TAHUN 4)</h2><p>Karangan 80-120 patah perkataan.</p><h3>📝 Struktur</h3><div class="langkah">Pendahuluan (2-3 ayat)</div><div class="langkah">Isi (3 perenggan)</div><div class="langkah">Penutup (2-3 ayat)</div>';
-NOTA['bm_4_Ringkasan'] = '<h2>📄 RINGKASAN</h2><p>Ringkasan = cerita pendek dari teks panjang.</p><h3>📝 Cara Buat</h3><div class="langkah">Baca teks penuh</div><div class="langkah">Ambil isi utama</div><div class="langkah">Tulis 80-100 patah perkataan</div>';
-NOTA['bm_5_Karangan'] = '<h2>✍️ KARANGAN (TAHUN 5)</h2><p>Karangan 120-150 patah perkataan.</p><h3>📝 Jenis</h3><div class="langkah">Karangan fakta</div><div class="langkah">Karangan cerita</div><div class="langkah">Karangan berita</div>';
-NOTA['bm_5_Ringkasan'] = '<h2>📄 RINGKASAN (TAHUN 5)</h2><p>Ringkasan 100-120 patah perkataan.</p><h3>📝 Tip</h3><div class="langkah">Kekalkan isi penting</div><div class="langkah">Buang contoh & huraian</div>';
-NOTA['bm_6_Karangan'] = '<h2>✍️ KARANGAN (TAHUN 6)</h2><p>Karangan UPSR - 150 patah perkataan.</p><h3>📝 Jenis</h3><div class="langkah">Fakta</div><div class="langkah">Cerita</div><div class="langkah">Berita</div><div class="langkah">Surat</div>';
-NOTA['bm_6_Ringkasan'] = '<h2>📄 RINGKASAN (TAHUN 6)</h2><p>Ringkasan UPSR - 120 patah perkataan.</p><h3>📝 Cara</h3><div class="langkah">Baca soalan dulu</div><div class="langkah">Cari isi utama</div><div class="langkah">Tulis padat</div>';
+NOTA['bm_2_Ayat Mudah'] = '<h2>📝 AYAT MUDAH</h2><p>Ayat pendek & senang.</p><h3>✨ Contoh</h3><div class="contoh">Saya makan nasi.<br>Ayah pergi kerja.<br>Emak masak ikan.</div><h3>💡 Tip</h3><div class="formula">Subjek + Kata Kerja + Objek</div>';
+NOTA['bm_2_Kata Nama'] = '<h2>📚 KATA NAMA</h2><p>Nama orang, tempat, benda.</p><h3>✨ Contoh</h3><div class="contoh">Orang: Ali, Siti<br>Tempat: sekolah, rumah<br>Benda: meja, buku</div>';
+NOTA['bm_3_Karangan'] = '<h2>✍️ KARANGAN (Thn 3)</h2><h3>📝 Struktur</h3><div class="langkah"><b>1.</b> Pendahuluan</div><div class="langkah"><b>2.</b> Isi (3-4 perenggan)</div><div class="langkah"><b>3.</b> Penutup</div>';
+NOTA['bm_3_Peribahasa'] = '<h2>📖 PERIBAHASA</h2><h3>✨ Contoh</h3><div class="contoh">Bagai aur dengan tebing<br>Sedikit-sedikit, lama-lama jadi bukit<br>Rajin berusaha, pasti berjaya</div>';
+NOTA['bm_4_Karangan'] = '<h2>✍️ KARANGAN (Thn 4)</h2><p>80-120 patah perkataan.</p><h3>📝 Struktur</h3><div class="langkah">Pendahuluan</div><div class="langkah">Isi (3 perenggan)</div><div class="langkah">Penutup</div>';
+NOTA['bm_4_Ringkasan'] = '<h2>📄 RINGKASAN</h2><h3>📝 Cara</h3><div class="langkah">Baca teks penuh</div><div class="langkah">Ambil isi utama</div><div class="langkah">Tulis 80-100 patah</div>';
+NOTA['bm_5_Karangan'] = '<h2>✍️ KARANGAN (Thn 5)</h2><p>120-150 patah perkataan.</p><h3>📝 Jenis</h3><div class="langkah">Fakta</div><div class="langkah">Cerita</div><div class="langkah">Berita</div>';
+NOTA['bm_5_Ringkasan'] = '<h2>📄 RINGKASAN (Thn 5)</h2><p>100-120 patah perkataan.</p><h3>📝 Tip</h3><div class="langkah">Kekalkan isi penting</div><div class="langkah">Buang huraian</div>';
+NOTA['bm_6_Karangan'] = '<h2>✍️ KARANGAN (Thn 6)</h2><p>UPSR - 150 patah.</p><h3>📝 Jenis</h3><div class="langkah">Fakta</div><div class="langkah">Cerita</div><div class="langkah">Berita</div><div class="langkah">Surat</div>';
+NOTA['bm_6_Ringkasan'] = '<h2>📄 RINGKASAN (Thn 6)</h2><p>UPSR - 120 patah.</p><h3>📝 Cara</h3><div class="langkah">Baca soalan</div><div class="langkah">Cari isi utama</div><div class="langkah">Tulis padat</div>';
 
-// ===== BAHASA INGGERIS =====
+// BAHASA INGGERIS
 NOTA['bi_1_Alphabet'] = '<h2>🅰️ ALPHABET A-Z</h2><p>English ada 26 huruf.</p><h3>📝 Huruf Besar</h3><div class="contoh">A B C D E F G H I J K L M<br>N O P Q R S T U V W X Y Z</div><h3>📝 Huruf Kecil</h3><div class="contoh">a b c d e f g h i j k l m<br>n o p q r s t u v w x y z</div>';
 NOTA['bi_1_Numbers'] = '<h2>🔢 NUMBERS 1-20</h2><h3>📝 1-10</h3><div class="contoh">One, Two, Three, Four, Five,<br>Six, Seven, Eight, Nine, Ten</div><h3>📝 11-20</h3><div class="contoh">Eleven, Twelve, Thirteen, Fourteen, Fifteen,<br>Sixteen, Seventeen, Eighteen, Nineteen, Twenty</div>';
 NOTA['bi_2_Numbers'] = '<h2>🔢 NUMBERS 1-100</h2><h3>📝 Tens</h3><div class="contoh">10 Ten, 20 Twenty, 30 Thirty<br>40 Forty, 50 Fifty, 60 Sixty<br>70 Seventy, 80 Eighty, 90 Ninety<br>100 One hundred</div>';
-NOTA['bi_2_Family'] = '<h2>👨‍👩‍👧 FAMILY</h2><h3>📝 Family Members</h3><div class="conto
+NOTA['bi_2_Family'] = '<h2>👨‍👩‍👧 FAMILY</h2><h3>📝 Family Members</h3><div class="contoh">Father - Ayah<br>Mother - Emak<br>Brother - Abang/Adik<br>Sister - Kakak/Adik<br>Grandfather - Atuk<br>Grandmother - Opah</div>';
+NOTA['bi_3_Tenses'] = '<h2>⏰ TENSES</h2><h3>📝 Present Tense</h3><div class="contoh">I eat rice.<br>She goes to school.</div><h3>📝 Past Tense</h3><div class="contoh">I ate rice.<br>She went to school.</div>';
+NOTA['bi_3_Prepositions'] = '<h2>📍 PREPOSITIONS</h2><h3>✨ Contoh</h3><div class="contoh">in - dalam<br>on - atas<br>under - bawah<br>beside - sebelah<br>behind - belakang</div>';
+NOTA['bi_4_Grammar'] = '<h2>📚 GRAMMAR (Thn 4)</h2><h3>📝 Nouns & Verbs</h3><div class="contoh">Noun: cat, book, table<br>Verb: run, eat, sleep</div><h3>📝 Adjectives</h3><div class="contoh">big, small, tall, short, happy</div>';
+NOTA['bi_4_Writing'] = '<h2>✍️ WRITING (Thn 4)</h2><h3>📝 Simple Sentences</h3><div class="contoh">I like to play football.<br>My mother cooks delicious food.<br>We go to school every day.</div>';
+NOTA['bi_5_Grammar'] = '<h2>📚 GRAMMAR (Thn 5)</h2><h3>📝 Complex Sentences</h3><div class="contoh">Although it was raining, we went out.<br>She is smart and hardworking.</div>';
+NOTA['bi_5_Writing'] = '<h2>✍️ WRITING (Thn 5)</h2><h3>📝 Paragraphs</h3><div class="contoh">My name is Ahmad. I live in Kuala Lumpur. I study in Year 5. I love playing badminton.</div>';
+NOTA['bi_6_Grammar'] = '<h2>📚 GRAMMAR (Thn 6)</h2><h3>📝 UPSR Level</h3><div class="contoh">Present Perfect: I have finished.<br>Past Continuous: I was eating.<br>Future: I will go.</div>';
+NOTA['bi_6_Writing'] = '<h2>✍️ WRITING (Thn 6)</h2><h3>📝 Essays</h3><div class="contoh">Introduction<br>Body (3 paragraphs)<br>Conclusion</div>';
+
+// SAINS
+NOTA['sains_1_Anggota Badan'] = '<h2>🧍 ANGGOTA BADAN</h2><h3>📝 Anggota Badan</h3><div class="langkah">👁️ Mata - melihat</div><div class="langkah">👂 Telinga - mendengar</div><div class="langkah">👃 Hidung - menghidu</div><div class="langkah">👄 Mulut - makan</div><div class="langkah">🖐️ Tangan - memegang</div><div class="langkah">🦶 Kaki - berjalan</div><h3
