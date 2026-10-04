@@ -6,274 +6,58 @@
 <title>Subjek - IQmal AI</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
-  
-  body {
-    background: linear-gradient(135deg,#0a1929 0%,#1a3a5c 50%,#0d2137 100%);
-    min-height:100vh;
-    padding:12px;
-    color:white;
-  }
-  
-  .container {
-    max-width:950px; margin:auto;
-    background:linear-gradient(135deg,#0d2137,#1a3a5c);
-    border-radius:30px; padding:22px;
-    box-shadow:0 0 0 3px #D4AF37,0 0 0 6px #8B6914,0 20px 60px rgba(0,0,0,0.6);
-    position:relative; z-index:10;
-  }
-  
-  .header {
-    display:flex; align-items:center; gap:12px;
-    margin-bottom:20px;
-    padding-bottom:15px;
-    border-bottom:2px solid #D4AF37;
-    flex-wrap:wrap;
-  }
-  
-  .btn-back {
-    background:linear-gradient(135deg,#1a3a5c,#0d2137);
-    border:2px solid #D4AF37;
-    color:#D4AF37;
-    padding:10px 15px;
-    border-radius:15px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:14px;
-    transition:0.2s;
-    flex-shrink:0;
-  }
-  .btn-back:hover { transform:translateY(-2px); box-shadow:0 0 15px rgba(212,175,55,0.5); }
-  
-  /* GAMBAR IQmal */
-  .avatar-iqmal {
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #D4AF37;
-    box-shadow:0 0 15px rgba(212,175,55,0.6);
-    flex-shrink:0;
-  }
-  
-  .info-subjek { flex:1; min-width:150px; }
-  .info-subjek .badge {
-    display:inline-block;
-    background:linear-gradient(135deg,#D4AF37,#B8860B);
-    color:#0a1929;
-    padding:3px 12px;
-    border-radius:10px;
-    font-size:11px;
-    font-weight:bold;
-    letter-spacing:1px;
-    margin-bottom:5px;
-  }
-  .info-subjek h1 {
-    color:#D4AF37;
-    font-size:22px;
-    text-shadow:0 0 10px rgba(212,175,55,0.6);
-  }
+  body { background: linear-gradient(135deg,#0a1929 0%,#1a3a5c 50%,#0d2137 100%); min-height:100vh; padding:12px; color:white; }
+  .container { max-width:950px; margin:auto; background:linear-gradient(135deg,#0d2137,#1a3a5c); border-radius:30px; padding:22px; box-shadow:0 0 0 3px #D4AF37,0 0 0 6px #8B6914,0 20px 60px rgba(0,0,0,0.6); }
+  .header { display:flex; align-items:center; gap:15px; margin-bottom:20px; padding-bottom:15px; border-bottom:2px solid #D4AF37; flex-wrap:wrap; }
+  .btn-back { background:linear-gradient(135deg,#1a3a5c,#0d2137); border:2px solid #D4AF37; color:#D4AF37; padding:10px 15px; border-radius:15px; text-decoration:none; font-weight:bold; font-size:14px; }
+  .info-subjek { flex:1; min-width:180px; }
+  .info-subjek .badge { display:inline-block; background:linear-gradient(135deg,#D4AF37,#B8860B); color:#0a1929; padding:3px 12px; border-radius:10px; font-size:11px; font-weight:bold; margin-bottom:5px; }
+  .info-subjek h1 { color:#D4AF37; font-size:20px; }
   .info-subjek p { color:#8ba3c7; font-size:12px; margin-top:3px; }
-  
-  .tabs {
-    display:flex; gap:8px; margin-bottom:18px; flex-wrap:wrap;
-  }
-  .tab {
-    flex:1; min-width:110px;
-    background:linear-gradient(135deg,#0d2137,#1a3a5c);
-    border:2px solid #4a6fa5;
-    color:#8ba3c7;
-    padding:12px 10px;
-    border-radius:15px;
-    font-weight:bold;
-    font-size:13px;
-    cursor:pointer;
-    font-family:inherit;
-    transition:0.2s;
-    text-align:center;
-  }
-  .tab:hover { border-color:#D4AF37; color:#D4AF37; }
-  .tab.active {
-    background:linear-gradient(135deg,#D4AF37,#B8860B);
-    color:#0a1929;
-    border-color:#D4AF37;
-    box-shadow:0 0 20px rgba(212,175,55,0.6);
-  }
-  
-  .content-box {
-    background:linear-gradient(135deg,#1a3a5c,#0d2137);
-    border:2px solid #D4AF37;
-    border-radius:20px;
-    padding:20px;
-    min-height:300px;
-    margin-bottom:15px;
-  }
-  
-  .topik-list {
-    display:flex; gap:8px; flex-wrap:wrap;
-    margin-bottom:15px;
-  }
-  .topik-btn {
-    background:linear-gradient(135deg,#0d2137,#1a3a5c);
-    border:2px solid #4a6fa5;
-    color:#8ba3c7;
-    padding:8px 14px;
-    border-radius:12px;
-    font-weight:bold;
-    font-size:12px;
-    cursor:pointer;
-    font-family:inherit;
-    transition:0.2s;
-  }
-  .topik-btn:hover { border-color:#D4AF37; color:#D4AF37; }
-  .topik-btn.active {
-    background:linear-gradient(135deg,#D4AF37,#B8860B);
-    color:#0a1929;
-    border-color:#D4AF37;
-  }
-  
+  .tabs { display:flex; gap:8px; margin-bottom:15px; flex-wrap:wrap; }
+  .tab { flex:1; min-width:100px; background:linear-gradient(135deg,#0d2137,#1a3a5c); border:2px solid #4a6fa5; color:#8ba3c7; padding:12px 10px; border-radius:15px; font-weight:bold; font-size:13px; cursor:pointer; font-family:inherit; text-align:center; }
+  .tab.active { background:linear-gradient(135deg,#D4AF37,#B8860B); color:#0a1929; border-color:#D4AF37; }
+  .topik-list { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px; }
+  .topik-btn { background:linear-gradient(135deg,#0d2137,#1a3a5c); border:2px solid #4a6fa5; color:#8ba3c7; padding:8px 14px; border-radius:12px; font-weight:bold; font-size:12px; cursor:pointer; font-family:inherit; }
+  .topik-btn.active { background:linear-gradient(135deg,#D4AF37,#B8860B); color:#0a1929; border-color:#D4AF37; }
+  .content-box { background:linear-gradient(135deg,#1a3a5c,#0d2137); border:2px solid #D4AF37; border-radius:20px; padding:20px; min-height:300px; }
   .nota-content h2 { color:#D4AF37; margin-bottom:12px; font-size:19px; }
   .nota-content h3 { color:#D4AF37; margin:15px 0 8px; font-size:15px; border-left:4px solid #D4AF37; padding-left:10px; }
   .nota-content p { line-height:1.8; color:#e0e8f0; margin-bottom:10px; font-size:14px; }
-  .nota-content .contoh {
-    background:rgba(212,175,55,0.1);
-    border-left:4px solid #D4AF37;
-    padding:12px;
-    border-radius:8px;
-    margin:10px 0;
-    color:#e0e8f0;
-    font-size:14px;
-    line-height:1.7;
-  }
-  .nota-content .formula {
-    background:rgba(212,175,55,0.15);
-    border:2px dashed #D4AF37;
-    padding:12px;
-    border-radius:12px;
-    text-align:center;
-    font-weight:bold;
-    color:#D4AF37;
-    margin:12px 0;
-    font-size:15px;
-  }
-  .nota-content .langkah {
-    background:rgba(212,175,55,0.08);
-    border-left:4px solid #D4AF37;
-    padding:10px 12px;
-    border-radius:8px;
-    margin:8px 0;
-    color:#e0e8f0;
-    font-size:14px;
-  }
-  
-  .soalan-box {
-    background:rgba(255,255,255,0.05);
-    border-radius:15px;
-    padding:15px;
-    margin-bottom:12px;
-    border:1px solid rgba(212,175,55,0.3);
-  }
-  .soalan-teks {
-    color:#D4AF37;
-    font-weight:bold;
-    font-size:15px;
-    margin-bottom:12px;
-  }
-  .pilihan {
-    background:linear-gradient(135deg,#0d2137,#1a3a5c);
-    border:2px solid #4a6fa5;
-    color:#e0e8f0;
-    padding:12px 15px;
-    border-radius:12px;
-    margin-bottom:8px;
-    cursor:pointer;
-    font-weight:bold;
-    font-size:14px;
-    transition:0.2s;
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .pilihan:hover { border-color:#D4AF37; transform:translateX(5px); }
+  .nota-content .contoh { background:rgba(212,175,55,0.1); border-left:4px solid #D4AF37; padding:12px; border-radius:8px; margin:10px 0; color:#e0e8f0; font-size:14px; line-height:1.8; }
+  .nota-content .formula { background:rgba(212,175,55,0.15); border:2px dashed #D4AF37; padding:12px; border-radius:12px; text-align:center; font-weight:bold; color:#D4AF37; margin:12px 0; }
+  .nota-content .langkah { background:rgba(212,175,55,0.08); border-left:4px solid #D4AF37; padding:10px 12px; border-radius:8px; margin:8px 0; color:#e0e8f0; font-size:14px; }
+  .soalan-box { background:rgba(255,255,255,0.05); border-radius:15px; padding:15px; margin-bottom:12px; border:1px solid rgba(212,175,55,0.3); }
+  .soalan-teks { color:#D4AF37; font-weight:bold; font-size:15px; margin-bottom:12px; }
+  .pilihan { background:linear-gradient(135deg,#0d2137,#1a3a5c); border:2px solid #4a6fa5; color:#e0e8f0; padding:12px 15px; border-radius:12px; margin-bottom:8px; cursor:pointer; font-weight:bold; font-size:14px; display:flex; align-items:center; gap:12px; }
   .pilihan.betul { background:linear-gradient(135deg,#1e5631,#2e7d32); border-color:#4CAF50; color:#c8f7c5; }
   .pilihan.salah { background:linear-gradient(135deg,#7f1d1d,#c62828); border-color:#e53935; color:#ffcdd2; }
-  .pilihan .huruf {
-    background:#D4AF37;
-    color:#0a1929;
-    min-width:28px;
-    height:28px;
-    line-height:28px;
-    border-radius:50%;
-    text-align:center;
-    font-size:13px;
-    font-weight:bold;
-  }
+  .pilihan .huruf { background:#D4AF37; color:#0a1929; min-width:28px; height:28px; line-height:28px; border-radius:50%; text-align:center; font-size:13px; }
   .pilihan.betul .huruf { background:#4CAF50; color:white; }
   .pilihan.salah .huruf { background:#e53935; color:white; }
-  
-  .feedback {
-    padding:12px;
-    border-radius:10px;
-    margin-top:10px;
-    font-weight:bold;
-    font-size:13px;
-    display:none;
-  }
+  .feedback { padding:12px; border-radius:10px; margin-top:10px; font-weight:bold; font-size:13px; display:none; }
   .feedback.show { display:block; }
   .feedback.ok { background:rgba(76,175,80,0.2); border:1px solid #4CAF50; color:#c8f7c5; }
   .feedback.no { background:rgba(229,57,53,0.2); border:1px solid #e53935; color:#ffcdd2; }
-  
-  .progress {
-    text-align:center;
-    color:#D4AF37;
-    font-weight:bold;
-    margin-bottom:15px;
-    font-size:14px;
-  }
-  
-  .video-info {
-    text-align:center;
-    padding:40px 20px;
-    background:rgba(212,175,55,0.05);
-    border:2px dashed rgba(212,175,55,0.3);
-    border-radius:15px;
-  }
-  .video-info .ikon { font-size:60px; margin-bottom:15px; }
-  .video-info h3 { color:#D4AF37; margin-bottom:10px; font-size:17px; }
-  .video-info p { color:#8ba3c7; font-size:13px; line-height:1.7; }
-  .video-box {
-    background:#000;
-    border-radius:15px;
-    overflow:hidden;
-    border:3px solid #D4AF37;
-    margin-bottom:15px;
-  }
-  .video-box video { width:100%; display:block; max-height:400px; }
-  
-  .loading {
-    text-align:center; padding:40px; color:#D4AF37; font-weight:bold;
-  }
-  
+  .info-video { text-align:center; padding:40px 20px; background:rgba(212,175,55,0.05); border:2px dashed rgba(212,175,55,0.3); border-radius:15px; }
+  .info-video .ikon { font-size:60px; margin-bottom:15px; }
+  .info-video h3 { color:#D4AF37; margin-bottom:10px; font-size:17px; }
+  .info-video p { color:#8ba3c7; font-size:13px; line-height:1.7; }
   @media (max-width:600px) {
     .info-subjek h1 { font-size:16px; }
-    .tabs { gap:5px; }
-    .tab { padding:10px 6px; font-size:11px; min-width:80px; }
-    .content-box { padding:15px; }
-    .avatar-iqmal { width:45px; height:45px; }
-    .btn-back { padding:8px 10px; font-size:12px; }
+    .tab { padding:10px 6px; font-size:11px; min-width:70px; }
   }
 </style>
 </head>
 <body>
 
 <div class="container">
-  
   <div class="header">
     <a href="index.html" class="btn-back">⬅️ Balik</a>
-    <img src="iqmal.jpeg" alt="IQmal" class="avatar-iqmal">
     <div class="info-subjek">
       <span class="badge" id="badgeTahun">TAHUN 1</span>
-      <h1 id="namaSubjek">Memuatkan...</h1>
-      <p id="infoSubjek">📚 Sedang dimuatkan...</p>
+      <h1 id="namaSubjek">Subjek</h1>
+      <p id="infoSubjek">📚 Buku Teks • Latihan • Video</p>
     </div>
   </div>
 
@@ -286,23 +70,19 @@
   <div class="topik-list" id="topikList"></div>
 
   <div class="content-box" id="contentBox">
-    <div class="loading">⏳ Memuatkan...</div>
+    <div style="text-align:center;padding:40px;color:#D4AF37;">⏳ Memuatkan...</div>
   </div>
-
 </div>
 
 <script>
-// ==========================================
-// AMBIL PARAMETER URL
-// ==========================================
-const params = new URLSearchParams(window.location.search);
-const tahun = params.get('tahun') || '1';
-const subjekId = params.get('id') || 'matematik';
+var params = new URLSearchParams(window.location.search);
+var tahun = params.get('tahun') || '1';
+var subjekId = params.get('id') || 'matematik';
 
 // ==========================================
-// SENARAI SUBJEK
+// NAMA SUBJEK
 // ==========================================
-const NAMA_SUBJEK = {
+var NAMA_SUBJEK = {
   matematik: { nama: 'Matematik', emoji: '🔢', info: 'Nombor & Kiraan' },
   bm: { nama: 'Bahasa Melayu', emoji: '🇲🇾', info: 'Baca & Tulis' },
   bi: { nama: 'Bahasa Inggeris', emoji: '🇬🇧', info: 'English' },
@@ -318,46 +98,46 @@ const NAMA_SUBJEK = {
 // ==========================================
 // TOPIK IKUT SUBJEK & TAHUN
 // ==========================================
-const TOPIK = {
+var TOPIK = {
   matematik: {
     '1': ['Tambah', 'Tolak', 'Wang', 'Waktu'],
     '2': ['Tambah', 'Tolak', 'Darab', 'Wang'],
     '3': ['Tambah', 'Tolak', 'Darab', 'Bahagi', 'Pecahan'],
     '4': ['Pecahan', 'Perpuluhan', 'Peratus'],
     '5': ['Pecahan', 'Perpuluhan', 'Peratus'],
-    '6': ['Pecahan', 'Perpuluhan', 'Peratus', 'UPSR']
+    '6': ['Pecahan', 'Perpuluhan', 'Peratus']
   },
   bm: {
-    '1': ['Sukukata', 'Vokal & Konsonan', 'Perkataan'],
-    '2': ['Ayat Mudah', 'Kata Nama', 'Kata Kerja'],
-    '3': ['Karangan', 'Peribahasa', 'Tatabahasa'],
-    '4': ['Karangan', 'Ringkasan', 'Tatabahasa'],
-    '5': ['Karangan', 'Ringkasan', 'Sastera'],
-    '6': ['Karangan', 'Ringkasan', 'Pemahaman']
+    '1': ['Sukukata', 'Vokal dan Konsonan'],
+    '2': ['Ayat Mudah', 'Kata Nama'],
+    '3': ['Karangan', 'Peribahasa'],
+    '4': ['Karangan', 'Ringkasan'],
+    '5': ['Karangan', 'Ringkasan'],
+    '6': ['Karangan', 'Ringkasan']
   },
   bi: {
-    '1': ['Alphabet', 'Numbers', 'Colours'],
-    '2': ['Numbers', 'Family', 'Animals'],
-    '3': ['Tenses', 'Prepositions', 'Reading'],
-    '4': ['Grammar', 'Writing', 'Tenses'],
-    '5': ['Grammar', 'Writing', 'Literature'],
-    '6': ['Grammar', 'Writing', 'UPSR']
+    '1': ['Alphabet', 'Numbers'],
+    '2': ['Numbers', 'Family'],
+    '3': ['Tenses', 'Prepositions'],
+    '4': ['Grammar', 'Writing'],
+    '5': ['Grammar', 'Writing'],
+    '6': ['Grammar', 'Writing']
   },
   sains: {
-    '1': ['Anggota Badan', 'Haiwan', 'Tumbuhan'],
-    '2': ['Manusia', 'Haiwan', 'Air & Udara'],
-    '3': ['Haiwan', 'Tumbuhan', 'Tenaga'],
-    '4': ['Fotosintesis', 'Rantai Makanan', 'Tenaga'],
-    '5': ['Sistem Badan', 'Tenaga', 'Angkasa'],
-    '6': ['Sistem Badan', 'Bumi', 'Teknologi']
+    '1': ['Anggota Badan', 'Haiwan'],
+    '2': ['Manusia', 'Haiwan'],
+    '3': ['Haiwan', 'Tumbuhan'],
+    '4': ['Fotosintesis', 'Tenaga'],
+    '5': ['Sistem Badan', 'Tenaga'],
+    '6': ['Sistem Badan', 'Teknologi']
   },
   islam: {
-    '1': ['Rukun Islam', 'Wuduk', 'Doa Harian'],
-    '2': ['Solat', 'Doa', 'Akhlak'],
-    '3': ['Ibadah', 'Sirah', 'Akhlak'],
-    '4': ['Akidah', 'Ibadah', 'Sirah'],
-    '5': ['Akidah', 'Ibadah', 'Sirah'],
-    '6': ['Akidah', 'Ibadah', 'Sirah']
+    '1': ['Rukun Islam', 'Wuduk'],
+    '2': ['Solat', 'Doa'],
+    '3': ['Ibadah', 'Sirah'],
+    '4': ['Akidah', 'Ibadah'],
+    '5': ['Akidah', 'Ibadah'],
+    '6': ['Akidah', 'Ibadah']
   },
   seni: {
     '1': ['Warna', 'Garisan'],
@@ -396,190 +176,55 @@ const TOPIK = {
 };
 
 // ==========================================
-// NOTA BUKU TEKS
+// NOTA BUKU TEKS - SEMUA TAHUN
 // ==========================================
-const NOTA = {
-  'matematik_1_Tambah': `<h2>➕ TAMBAH</h2>
-<p>Tambah bermaksud <b>campur</b> dua atau lebih nombor.</p>
-<h3>📝 Cara Kira</h3>
-<div class="langkah"><b>Langkah 1:</b> Tulis nombor menegak</div>
-<div class="langkah"><b>Langkah 2:</b> Susun sa di bawah sa, puluh di bawah puluh</div>
-<div class="langkah"><b>Langkah 3:</b> Tambah dari kanan (sa dulu)</div>
-<div class="langkah"><b>Langkah 4:</b> Tulis jawapan</div>
-<h3>✨ Contoh</h3>
-<div class="contoh">5 + 3 = 8<br>12 + 7 = 19<br>25 + 13 = 38</div>
-<h3>💡 Tip</h3>
-<div class="formula">+ maksud TAMBAH<br>Bila tambah, nombor jadi LEBIH BESAR!</div>`,
+var NOTA = {};
 
-  'matematik_1_Tolak': `<h2>➖ TOLAK</h2>
-<p>Tolak bermaksud <b>kurang</b> atau <b>ambil</b> daripada sesuatu.</p>
-<h3>📝 Cara Kira</h3>
-<div class="langkah"><b>Langkah 1:</b> Tulis nombor besar di atas</div>
-<div class="langkah"><b>Langkah 2:</b> Tulis nombor kecil di bawah</div>
-<div class="langkah"><b>Langkah 3:</b> Tolak dari kanan (sa dulu)</div>
-<div class="langkah"><b>Langkah 4:</b> Tulis jawapan</div>
-<h3>✨ Contoh</h3>
-<div class="contoh">8 - 3 = 5<br>15 - 4 = 11<br>30 - 12 = 18</div>
-<h3>💡 Tip</h3>
-<div class="formula">- maksud TOLAK<br>Bila tolak, nombor jadi LEBIH KECIL!</div>`,
+// ===== MATEMATIK =====
+NOTA['matematik_1_Tambah'] = '<h2>➕ TAMBAH</h2><p>Tambah bermaksud <b>campur</b> dua atau lebih nombor.</p><h3>📝 Cara Kira</h3><div class="langkah"><b>Langkah 1:</b> Tulis nombor menegak</div><div class="langkah"><b>Langkah 2:</b> Susun sa di bawah sa</div><div class="langkah"><b>Langkah 3:</b> Tambah dari kanan</div><h3>✨ Contoh</h3><div class="contoh">5 + 3 = 8<br>12 + 7 = 19<br>25 + 13 = 38</div><h3>💡 Tip</h3><div class="formula">+ maksud TAMBAH</div>';
+NOTA['matematik_1_Tolak'] = '<h2>➖ TOLAK</h2><p>Tolak bermaksud <b>kurang</b> atau <b>ambil</b>.</p><h3>📝 Cara Kira</h3><div class="langkah"><b>Langkah 1:</b> Nombor besar di atas</div><div class="langkah"><b>Langkah 2:</b> Nombor kecil di bawah</div><div class="langkah"><b>Langkah 3:</b> Tolak dari kanan</div><h3>✨ Contoh</h3><div class="contoh">8 - 3 = 5<br>15 - 4 = 11<br>30 - 12 = 18</div><h3>💡 Tip</h3><div class="formula">- maksud TOLAK</div>';
+NOTA['matematik_1_Wang'] = '<h2>💰 WANG</h2><p>Wang Malaysia guna <b>Ringgit (RM)</b> dan <b>sen</b>.</p><h3>📝 Unit Wang</h3><div class="langkah">RM1 = 100 sen</div><div class="langkah">50 sen = RM0.50</div><h3>✨ Contoh</h3><div class="contoh">RM2 + RM3 = RM5<br>RM10 - RM4 = RM6</div>';
+NOTA['matematik_1_Waktu'] = '<h2>⏰ WAKTU</h2><h3>📝 Unit Masa</h3><div class="langkah">1 jam = 60 minit</div><div class="langkah">1 minit = 60 saat</div><div class="langkah">1 hari = 24 jam</div><h3>✨ Contoh</h3><div class="contoh">2 jam = 120 minit<br>Setengah jam = 30 minit</div>';
 
-  'matematik_1_Wang': `<h2>💰 WANG</h2>
-<p>Wang Malaysia guna <b>Ringgit (RM)</b> dan <b>sen</b>.</p>
-<h3>📝 Unit Wang</h3>
-<div class="langkah">RM1 = 100 sen</div>
-<div class="langkah">50 sen = RM0.50</div>
-<div class="langkah">RM5.50 = 5 ringgit 50 sen</div>
-<h3>✨ Contoh</h3>
-<div class="contoh">RM2 + RM3 = RM5<br>RM10 - RM4 = RM6<br>50 sen + 50 sen = RM1</div>
-<h3>💡 Tip</h3>
-<div class="formula">RM = Ringgit Malaysia<br>100 sen = RM1</div>`,
+NOTA['matematik_2_Tambah'] = '<h2>➕ TAMBAH (TAHUN 2)</h2><p>Tambah nombor hingga 1,000.</p><h3>📝 Cara Kira</h3><div class="langkah">Susun menegak ikut tempat</div><div class="langkah">Tambah dari kanan: sa, puluh, ratus</div><h3>✨ Contoh</h3><div class="contoh">125 + 234 = 359<br>340 + 150 = 490</div>';
+NOTA['matematik_2_Tolak'] = '<h2>➖ TOLAK (TAHUN 2)</h2><p>Tolak nombor hingga 1,000.</p><h3>📝 Cara Kira</h3><div class="langkah">Tolak dari kanan: sa, puluh, ratus</div><div class="langkah">Kalau tak cukup, pinjam dari tempat sebelah</div><h3>✨ Contoh</h3><div class="contoh">500 - 125 = 375<br>720 - 340 = 380</div>';
+NOTA['matematik_2_Darab'] = '<h2>✖️ DARAB (TAHUN 2)</h2><p>Darab = tambah berulang.</p><h3>📝 Cara Kira</h3><div class="langkah">3 × 4 = 3+3+3+3 = 12</div><div class="langkah">Hafal sifir 2-5</div><h3>✨ Contoh</h3><div class="contoh">2 × 5 = 10<br>3 × 4 = 12<br>4 × 5 = 20</div>';
+NOTA['matematik_2_Wang'] = '<h2>💰 WANG (TAHUN 2)</h2><p>Campur & tolak wang hingga RM100.</p><h3>✨ Contoh</h3><div class="contoh">RM15 + RM20 = RM35<br>RM50 - RM25 = RM25</div>';
 
-  'matematik_1_Waktu': `<h2>⏰ WAKTU</h2>
-<p>Waktu diukur dalam <b>jam</b>, <b>minit</b>, dan <b>saat</b>.</p>
-<h3>📝 Unit Masa</h3>
-<div class="langkah">1 jam = 60 minit</div>
-<div class="langkah">1 minit = 60 saat</div>
-<div class="langkah">1 hari = 24 jam</div>
-<h3>✨ Contoh</h3>
-<div class="contoh">2 jam = 120 minit<br>Setengah jam = 30 minit</div>
-<h3>💡 Tip</h3>
-<div class="formula">1 jam = 60 minit<br>1 minit = 60 saat</div>`,
+NOTA['matematik_3_Tambah'] = '<h2>➕ TAMBAH (TAHUN 3)</h2><p>Tambah nombor hingga 10,000.</p><h3>✨ Contoh</h3><div class="contoh">2,345 + 1,234 = 3,579<br>5,000 + 2,500 = 7,500</div>';
+NOTA['matematik_3_Tolak'] = '<h2>➖ TOLAK (TAHUN 3)</h2><p>Tolak nombor hingga 10,000.</p><h3>✨ Contoh</h3><div class="contoh">5,000 - 1,234 = 3,766<br>8,000 - 2,500 = 5,500</div>';
+NOTA['matematik_3_Darab'] = '<h2>✖️ DARAB (TAHUN 3)</h2><p>Darab nombor besar.</p><h3>📝 Cara Kira</h3><div class="langkah">Hafal sifir 2-9</div><div class="langkah">Susun menegak untuk nombor besar</div><h3>✨ Contoh</h3><div class="contoh">23 × 3 = 69<br>45 × 4 = 180</div>';
+NOTA['matematik_3_Bahagi'] = '<h2>➗ BAHAGI (TAHUN 3)</h2><p>Bahagi = kongsi sama banyak.</p><h3>📝 Cara Kira</h3><div class="langkah">Tanya "berapa kali masuk?"</div><div class="langkah">Darab balik untuk check</div><h3>✨ Contoh</h3><div class="contoh">12 ÷ 3 = 4<br>24 ÷ 4 = 6<br>30 ÷ 5 = 6</div>';
+NOTA['matematik_3_Pecahan'] = '<h2>🍕 PECAHAN (TAHUN 3)</h2><p>Pecahan = sebahagian daripada benda.</p><h3>📝 Bahagian</h3><div class="langkah"><b>Pengangka</b> (atas) = bilangan diambil</div><div class="langkah"><b>Penyebut</b> (bawah) = jumlah keseluruhan</div><h3>✨ Contoh</h3><div class="contoh">1/2 = separuh<br>1/4 = satu per empat<br>3/4 = tiga per empat</div>';
 
-  'matematik_2_Darab': `<h2>✖️ DARAB</h2>
-<p>Darab bermaksud <b>tambah berulang</b>.</p>
-<h3>📝 Cara Kira</h3>
-<div class="langkah"><b>Cara 1:</b> Tambah berulang<br>3 × 4 = 3+3+3+3 = 12</div>
-<div class="langkah"><b>Cara 2:</b> Hafal sifir</div>
-<h3>✨ Contoh</h3>
-<div class="contoh">2 × 3 = 6<br>4 × 5 = 20<br>6 × 7 = 42</div>
-<h3>💡 Tip</h3>
-<div class="formula">× maksud DARAB<br>Hafal sifir 2-12 supaya cepat!</div>`,
+NOTA['matematik_4_Pecahan'] = '<h2>🍕 PECAHAN (TAHUN 4)</h2><p>Pecahan wajar, tak wajar & nombor bercampur.</p><h3>📝 Jenis</h3><div class="langkah"><b>Wajar:</b> 3/4 (atas < bawah)</div><div class="langkah"><b>Tak wajar:</b> 5/4 (atas > bawah)</div><div class="langkah"><b>Bercampur:</b> 1 1/4</div><h3>✨ Contoh</h3><div class="contoh">5/4 = 1 1/4<br>7/3 = 2 1/3</div>';
+NOTA['matematik_4_Perpuluhan'] = '<h2>🔟 PERPULUHAN (TAHUN 4)</h2><p>Perpuluhan guna titik (.).</p><h3>📝 Cara Baca</h3><div class="langkah">0.5 = sifar perpuluhan lima</div><div class="langkah">1.25 = satu perpuluhan dua lima</div><h3>✨ Contoh</h3><div class="contoh">0.5 + 0.3 = 0.8<br>1.2 + 0.8 = 2.0</div>';
+NOTA['matematik_4_Peratus'] = '<h2>% PERATUS (TAHUN 4)</h2><p>Peratus = per 100.</p><h3>📝 Simbol</h3><div class="langkah">50% = 50/100 = 0.5</div><div class="langkah">100% = semua</div><div class="langkah">25% = 1/4</div><h3>✨ Contoh</h3><div class="contoh">50% daripada 100 = 50<br>25% daripada 80 = 20</div>';
 
-  'bm_1_Sukukata': `<h2>🔤 SUKUKATA</h2>
-<p>Sukukata ialah bunyi yang membentuk perkataan.</p>
-<h3>📝 Jenis Sukukata</h3>
-<div class="langkah"><b>KV</b> = Konsonan + Vokal → ma, pa, tu</div>
-<div class="langkah"><b>VK</b> = Vokal + Konsonan → am, an, ap</div>
-<div class="langkah"><b>KVK</b> = Konsonan + Vokal + Konsonan → mak, pak</div>
-<div class="langkah"><b>KVKV</b> = ma-ma, pa-pa, bu-bu</div>
-<h3>✨ Contoh</h3>
-<div class="contoh">Bola = bo-la (KV-KV)<br>Buku = bu-ku (KV-KV)<br>Ikan = i-kan (V-KV)</div>
-<h3>💡 Tip</h3>
-<div class="formula">Tepuk tangan untuk kira sukukata!<br>Bu-ku = 2 tepukan</div>`,
+NOTA['matematik_5_Pecahan'] = '<h2>🍕 PECAHAN (TAHUN 5)</h2><p>Tambah & tolak pecahan.</p><h3>📝 Cara Kira</h3><div class="langkah">Sama penyebut: tambah pengangka sahaja</div><div class="langkah">Beda penyebut: samakan dulu</div><h3>✨ Contoh</h3><div class="contoh">1/4 + 2/4 = 3/4<br>1/2 + 1/4 = 2/4 + 1/4 = 3/4</div>';
+NOTA['matematik_5_Perpuluhan'] = '<h2>🔟 PERPULUHAN (TAHUN 5)</h2><p>Darab & bahagi perpuluhan.</p><h3>✨ Contoh</h3><div class="contoh">0.5 × 2 = 1.0<br>1.5 ÷ 3 = 0.5</div>';
+NOTA['matematik_5_Peratus'] = '<h2>% PERATUS (TAHUN 5)</h2><p>Kira peratus dengan mudah.</p><h3>✨ Contoh</h3><div class="contoh">10% daripada 50 = 5<br>20% daripada 100 = 20<br>50% daripada 60 = 30</div>';
 
-  'bm_1_Vokal & Konsonan': `<h2>🔠 VOKAL & KONSONAN</h2>
-<h3>📝 Vokal (A E I O U)</h3>
-<div class="contoh">A - Ibu Ayah<br>E - Emak<br>I - Ikan<br>O - Oren<br>U - Ubi</div>
-<h3>📝 Konsonan</h3>
-<p>Selain A E I O U — contoh: b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z</p>
-<h3>💡 Tip</h3>
-<div class="formula">Vokal = A E I O U<br>Konsonan = selainnya</div>`,
+NOTA['matematik_6_Pecahan'] = '<h2>🍕 PECAHAN (TAHUN 6)</h2><p>Operasi pecahan campur.</p><h3>✨ Contoh</h3><div class="contoh">1/2 + 1/3 = 3/6 + 2/6 = 5/6<br>2/3 - 1/4 = 8/12 - 3/12 = 5/12</div>';
+NOTA['matematik_6_Perpuluhan'] = '<h2>🔟 PERPULUHAN (TAHUN 6)</h2><p>Operasi perpuluhan campur.</p><h3>✨ Contoh</h3><div class="contoh">1.5 + 2.3 = 3.8<br>5.0 - 1.5 = 3.5<br>0.5 × 4 = 2.0</div>';
+NOTA['matematik_6_Peratus'] = '<h2>% PERATUS (TAHUN 6)</h2><p>Peratus dalam kehidupan harian.</p><h3>✨ Contoh</h3><div class="contoh">15% daripada 200 = 30<br>25% daripada 80 = 20<br>Diskaun 10% dari RM50 = RM5</div>';
 
-  'bi_1_Alphabet': `<h2>🅰️ ALPHABET A-Z</h2>
-<p>English ada 26 huruf dari A sampai Z.</p>
-<h3>📝 Huruf Besar</h3>
-<div class="contoh">A B C D E F G H I J K L M<br>N O P Q R S T U V W X Y Z</div>
-<h3>📝 Huruf Kecil</h3>
-<div class="contoh">a b c d e f g h i j k l m<br>n o p q r s t u v w x y z</div>
-<h3>💡 Tip</h3>
-<div class="formula">ABC Song untuk hafal!</div>`,
+// ===== BAHASA MELAYU =====
+NOTA['bm_1_Sukukata'] = '<h2>🔤 SUKUKATA</h2><p>Sukukata = bunyi yang membentuk perkataan.</p><h3>📝 Jenis</h3><div class="langkah"><b>KV</b> = ma, pa, tu</div><div class="langkah"><b>VK</b> = am, an, ap</div><div class="langkah"><b>KVK</b> = mak, pak, kak</div><div class="langkah"><b>KVKV</b> = ma-ma, bu-ku</div><h3>✨ Contoh</h3><div class="contoh">Bola = bo-la<br>Buku = bu-ku<br>Ikan = i-kan</div>';
+NOTA['bm_1_Vokal dan Konsonan'] = '<h2>🔠 VOKAL & KONSONAN</h2><h3>📝 Vokal (A E I O U)</h3><div class="contoh">A - Ayah<br>E - Emak<br>I - Ikan<br>O - Oren<br>U - Ubi</div><h3>📝 Konsonan</h3><p>Selain A E I O U — b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z</p>';
+NOTA['bm_2_Ayat Mudah'] = '<h2>📝 AYAT MUDAH</h2><p>Ayat mudah = ayat pendek & senang.</p><h3>✨ Contoh</h3><div class="contoh">Saya makan nasi.<br>Ayah pergi kerja.<br>Emak masak ikan.</div><h3>💡 Tip</h3><div class="formula">Subjek + Kata Kerja + Objek</div>';
+NOTA['bm_2_Kata Nama'] = '<h2>📚 KATA NAMA</h2><p>Kata nama = nama orang, tempat, benda.</p><h3>✨ Contoh</h3><div class="contoh">Orang: Ali, Siti, Ahmad<br>Tempat: sekolah, rumah<br>Benda: meja, buku, bola</div>';
+NOTA['bm_3_Karangan'] = '<h2>✍️ KARANGAN (TAHUN 3)</h2><p>Karangan = tulisan panjang.</p><h3>📝 Struktur</h3><div class="langkah"><b>1.</b> Pendahuluan</div><div class="langkah"><b>2.</b> Isi (3-4 perenggan)</div><div class="langkah"><b>3.</b> Penutup</div>';
+NOTA['bm_3_Peribahasa'] = '<h2>📖 PERIBAHASA</h2><p>Peribahasa = ayat pendek berisi nasihat.</p><h3>✨ Contoh</h3><div class="contoh">Bagai aur dengan tebing<br>Sedikit-sedikit, lama-lama jadi bukit<br>Rajin berusaha, pasti berjaya</div>';
+NOTA['bm_4_Karangan'] = '<h2>✍️ KARANGAN (TAHUN 4)</h2><p>Karangan 80-120 patah perkataan.</p><h3>📝 Struktur</h3><div class="langkah">Pendahuluan (2-3 ayat)</div><div class="langkah">Isi (3 perenggan)</div><div class="langkah">Penutup (2-3 ayat)</div>';
+NOTA['bm_4_Ringkasan'] = '<h2>📄 RINGKASAN</h2><p>Ringkasan = cerita pendek dari teks panjang.</p><h3>📝 Cara Buat</h3><div class="langkah">Baca teks penuh</div><div class="langkah">Ambil isi utama</div><div class="langkah">Tulis 80-100 patah perkataan</div>';
+NOTA['bm_5_Karangan'] = '<h2>✍️ KARANGAN (TAHUN 5)</h2><p>Karangan 120-150 patah perkataan.</p><h3>📝 Jenis</h3><div class="langkah">Karangan fakta</div><div class="langkah">Karangan cerita</div><div class="langkah">Karangan berita</div>';
+NOTA['bm_5_Ringkasan'] = '<h2>📄 RINGKASAN (TAHUN 5)</h2><p>Ringkasan 100-120 patah perkataan.</p><h3>📝 Tip</h3><div class="langkah">Kekalkan isi penting</div><div class="langkah">Buang contoh & huraian</div>';
+NOTA['bm_6_Karangan'] = '<h2>✍️ KARANGAN (TAHUN 6)</h2><p>Karangan UPSR - 150 patah perkataan.</p><h3>📝 Jenis</h3><div class="langkah">Fakta</div><div class="langkah">Cerita</div><div class="langkah">Berita</div><div class="langkah">Surat</div>';
+NOTA['bm_6_Ringkasan'] = '<h2>📄 RINGKASAN (TAHUN 6)</h2><p>Ringkasan UPSR - 120 patah perkataan.</p><h3>📝 Cara</h3><div class="langkah">Baca soalan dulu</div><div class="langkah">Cari isi utama</div><div class="langkah">Tulis padat</div>';
 
-  'bi_1_Numbers': `<h2>🔢 NUMBERS 1-20</h2>
-<h3>📝 1-10</h3>
-<div class="contoh">One, Two, Three, Four, Five,<br>Six, Seven, Eight, Nine, Ten</div>
-<h3>📝 11-20</h3>
-<div class="contoh">Eleven, Twelve, Thirteen, Fourteen, Fifteen,<br>Sixteen, Seventeen, Eighteen, Nineteen, Twenty</div>
-<h3>💡 Tip</h3>
-<div class="formula">One, two, three...<br>Counting song!</div>`,
-
-  'sains_1_Anggota Badan': `<h2>🧍 ANGGOTA BADAN</h2>
-<p>Badan kita ada banyak bahagian.</p>
-<h3>📝 Anggota Badan</h3>
-<div class="langkah">👁️ <b>Mata</b> - untuk melihat</div>
-<div class="langkah">👂 <b>Telinga</b> - untuk mendengar</div>
-<div class="langkah">👃 <b>Hidung</b> - untuk menghidu</div>
-<div class="langkah">👄 <b>Mulut</b> - untuk makan & bercakap</div>
-<div class="langkah">🖐️ <b>Tangan</b> - untuk memegang</div>
-<div class="langkah">🦶 <b>Kaki</b> - untuk berjalan</div>
-<h3>💡 Tip</h3>
-<div class="formula">5 deria: lihat, dengar, hidu, rasa, sentuh</div>`,
-
-  'sains_1_Haiwan': `<h2>🐾 HAIWAN</h2>
-<p>Haiwan ada banyak jenis.</p>
-<h3>📝 Jenis Haiwan</h3>
-<div class="langkah">🐕 <b>Haiwan peliharaan</b> - kucing, anjing, arnab</div>
-<div class="langkah">🦁 <b>Haiwan liar</b> - singa, harimau, gajah</div>
-<div class="langkah">🐔 <b>Haiwan ternakan</b> - ayam, lembu, kambing</div>
-<div class="langkah">🐟 <b>Haiwan air</b> - ikan, penyu, sotong</div>
-<h3>💡 Tip</h3>
-<div class="formula">Haiwan perlu makan, minum, dan bernafas</div>`,
-
-  'islam_1_Rukun Islam': `<h2>🕌 RUKUN ISLAM</h2>
-<p>Rukun Islam ada <b>5</b>.</p>
-<h3>📝 5 Rukun Islam</h3>
-<div class="langkah"><b>1.</b> Mengucap dua kalimah syahadah</div>
-<div class="langkah"><b>2.</b> Solat lima waktu</div>
-<div class="langkah"><b>3.</b> Berpuasa di bulan Ramadan</div>
-<div class="langkah"><b>4.</b> Membayar zakat</div>
-<div class="langkah"><b>5.</b> Mengerjakan haji</div>
-<h3>💡 Tip</h3>
-<div class="formula">Syahadah - Solat - Puasa - Zakat - Haji</div>`,
-
-  'islam_1_Wuduk': `<h2>💧 WUDUK</h2>
-<p>Wuduk ialah bersuci sebelum solat.</p>
-<h3>📝 Cara Berwuduk</h3>
-<div class="langkah"><b>1.</b> Niat</div>
-<div class="langkah"><b>2.</b> Basuh tangan</div>
-<div class="langkah"><b>3.</b> Berkumur</div>
-<div class="langkah"><b>4.</b> Basuh muka</div>
-<div class="langkah"><b>5.</b> Basuh tangan hingga siku</div>
-<div class="langkah"><b>6.</b> Sapu kepala</div>
-<div class="langkah"><b>7.</b> Basuh telinga</div>
-<div class="langkah"><b>8.</b> Basuh kaki</div>
-<h3>💡 Tip</h3>
-<div class="formula">Wuduk = bersuci sebelum solat</div>`,
-
-  'default': `<h2>📚 Nota</h2>
-<p>Nota untuk topik ini sedang disediakan.</p>
-<p>Anda boleh tambah nota sendiri dalam fail <b>subjek.html</b> — cari bahagian <b>NOTA</b>.</p>
-<div class="contoh">💡 Nota akan datang tidak lama lagi!</div>`
-};
-
-// ==========================================
-// LATIHAN ABC D
-// ==========================================
-const LATIHAN = {
-  'matematik_1_Tambah': [
-    { soalan: '3 + 4 = ?', A: '6', B: '7', C: '8', D: '9', jawapan: 'B' },
-    { soalan: '5 + 2 = ?', A: '6', B: '7', C: '8', D: '9', jawapan: 'B' },
-    { soalan: '6 + 3 = ?', A: '7', B: '8', C: '9', D: '10', jawapan: 'C' },
-    { soalan: '8 + 1 = ?', A: '8', B: '9', C: '10', D: '11', jawapan: 'B' },
-    { soalan: '7 + 5 = ?', A: '11', B: '12', C: '13', D: '14', jawapan: 'B' }
-  ],
-  'matematik_1_Tolak': [
-    { soalan: '8 - 3 = ?', A: '4', B: '5', C: '6', D: '7', jawapan: 'B' },
-    { soalan: '10 - 4 = ?', A: '5', B: '6', C: '7', D: '8', jawapan: 'B' },
-    { soalan: '15 - 5 = ?', A: '9', B: '10', C: '11', D: '12', jawapan: 'B' },
-    { soalan: '12 - 7 = ?', A: '4', B: '5', C: '6', D: '7', jawapan: 'B' },
-    { soalan: '20 - 8 = ?', A: '10', B: '11', C: '12', D: '13', jawapan: 'C' }
-  ],
-  'matematik_1_Wang': [
-    { soalan: 'RM2 + RM3 = ?', A: 'RM4', B: 'RM5', C: 'RM6', D: 'RM7', jawapan: 'B' },
-    { soalan: 'RM10 - RM4 = ?', A: 'RM5', B: 'RM6', C: 'RM7', D: 'RM8', jawapan: 'B' },
-    { soalan: '50 sen + 50 sen = ?', A: 'RM0.50', B: 'RM1', C: 'RM1.50', D: 'RM2', jawapan: 'B' },
-    { soalan: 'RM5 + 50 sen = ?', A: 'RM5', B: 'RM5.50', C: 'RM6', D: 'RM6.50', jawapan: 'B' },
-    { soalan: 'RM20 - RM15 = ?', A: 'RM3', B: 'RM4', C: 'RM5', D: 'RM6', jawapan: 'C' }
-  ],
-  'matematik_1_Waktu': [
-    { soalan: '1 jam = berapa minit?', A: '30', B: '50', C: '60', D: '100', jawapan: 'C' },
-    { soalan: '2 jam = berapa minit?', A: '100', B: '110', C: '120', D: '130', jawapan: 'C' },
-    { soalan: 'Setengah jam = berapa minit?', A: '20', B: '30', C: '40', D: '50', jawapan: 'B' },
-    { soalan: '1 minit = berapa saat?', A: '30', B: '50', C: '60', D: '100', jawapan: 'C' },
-    { soalan: '1 hari = berapa jam?', A: '12', B: '18', C: '24', D: '30', jawapan: 'C' }
-  ],
-  'bm_1_Sukukata': [
-    { soalan: 'Bola ada berapa sukukata?', A: '1', B: '2', C: '3', D: '4', jawapan: 'B' },
-    { soalan: 'Buku ada berapa sukukata?', A: '1', B: '2', C: '3', D: '4', jawapan: 'B' },
-    { soalan: 'KVKV bermaksud?', A: 'Konsonan Vokal', B: 'Vokal Konsonan', C: 'Konsonan Vokal Konsonan Vokal', D: 'Semua vokal', jawapan: 'C' },
-    { soalan: 'Ikan ada berapa sukukata?', A: '1', B: '2', C: '3', D: '4', jawapan: 'B' },
-    { soalan: 'Pilih
+// ===== BAHASA INGGERIS =====
+NOTA['bi_1_Alphabet'] = '<h2>🅰️ ALPHABET A-Z</h2><p>English ada 26 huruf.</p><h3>📝 Huruf Besar</h3><div class="contoh">A B C D E F G H I J K L M<br>N O P Q R S T U V W X Y Z</div><h3>📝 Huruf Kecil</h3><div class="contoh">a b c d e f g h i j k l m<br>n o p q r s t u v w x y z</div>';
+NOTA['bi_1_Numbers'] = '<h2>🔢 NUMBERS 1-20</h2><h3>📝 1-10</h3><div class="contoh">One, Two, Three, Four, Five,<br>Six, Seven, Eight, Nine, Ten</div><h3>📝 11-20</h3><div class="contoh">Eleven, Twelve, Thirteen, Fourteen, Fifteen,<br>Sixteen, Seventeen, Eighteen, Nineteen, Twenty</div>';
+NOTA['bi_2_Numbers'] = '<h2>🔢 NUMBERS 1-100</h2><h3>📝 Tens</h3><div class="contoh">10 Ten, 20 Twenty, 30 Thirty<br>40 Forty, 50 Fifty, 60 Sixty<br>70 Seventy, 80 Eighty, 90 Ninety<br>100 One hundred</div>';
+NOTA['bi_2_Family'] = '<h2>👨‍👩‍👧 FAMILY</h2><h3>📝 Family Members</h3><div class="conto
